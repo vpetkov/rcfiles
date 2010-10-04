@@ -1,11 +1,10 @@
-# Google Mail can also be Gmail
 
 #navigation bindings
 macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
-macro index ge "<change-folder>=All Mail<enter>" "Go to Archive"
+macro index ga "<change-folder>=Archive<enter>" "Go to Archive"
 macro index gs "<change-folder>=Sent<enter>" "Go to Sent"
 macro index gd "<change-folder>=Drafts<enter>" "Go to Drafts"
-macro index ga "<change-folder>=Action<enter>" "Go to Drafts"
+macro index gA "<change-folder>=Action<enter>" "Go to Drafts"
 macro index gr "<change-folder>=Respond<enter>" "Go to Drafts"
 macro index gw "<change-folder>=Waiting<enter>" "Go to Drafts"
 

@@ -82,8 +82,11 @@ endif
 "set hlsearch
 "nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
-" Arg!  I hate hitting q: instead of :q
-nnoremap q: q:iq<esc>
+" Arg! Hate hitting q: or :я instead of :q
+nnoremap q: :q<esc>
+nnoremap :я :q
+nnoremap :я! :q!
+nnoremap :вя :wq
 
 " <C-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
@@ -110,12 +113,8 @@ set statusline=%F%m%r%h%w\ \%{strftime(\"\%H\:\%M\:\%S\ \%a\ \%d\ \%b\ \%Y\",get
 :map <F7> :setlocal spell! spelllang=en_us,bg<CR>
 :imap <F7> <ESC>:setlocal spell! spelllang=en_us,bg<CR>
 
-"""" tumblr
-let tumblr_email="EMAIL"
-let tumblr_password="PASSWORD"
-
-
 """" български буквички
+map зг zg
 map ч `
 map я q
 map в w

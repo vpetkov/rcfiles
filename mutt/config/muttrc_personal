@@ -15,4 +15,3 @@ set smtp_pass = "RedInj"
 # Personal settings
 set from = "vpetkov@mm-sol.com"
 set realname = "Vesselin Petkov"
-my_hdr Organization: Company, City, Country
