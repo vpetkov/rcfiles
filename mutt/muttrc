@@ -1,7 +1,6 @@
 source ~/.mutt/config/muttrc_personal
 # editor settings
-# my signature is 3 lines. jump just before it when composing mail
-set editor = 'vim + -c "set textwidth=72" -c "set wrap" -c "set nocp" -c "\$-3"'
+set editor = 'vim + -c "set textwidth=72" -c "set wrap" -c "set nocp" -c "setlocal spell! spelllang=en_us,bg"'
 
 # caching
 set header_cache = ~/.mutt/cache/headers
@@ -9,18 +8,14 @@ set message_cachedir = ~/.mutt/cache/bodies
 set certificate_file = ~/.mutt/certificates
 
 #aliases
-set alias_file = ~/.mutt/aliases
-set sort_alias = alias
-set reverse_alias = yes
-source $alias_file
-
-#Goobook address book
-#source ~/.mutt/config/muttrc_goobook
+#set alias_file = ~/.mutt/aliases
+#set sort_alias = alias
+#set reverse_alias = yes
+#source $alias_file
 
 # Folder navigation bindings
 bind editor <space> noop
 
-#source ~/.mutt/config/muttrc_bindings_gmail
 source ~/.mutt/config/muttrc_bindings_generic
 
 set index_format="%4C %Z %{%b %d} %-15.15L %?M?(#%03M)&(%4l)? %?y?{%.20Y} ?%s"
@@ -28,6 +23,9 @@ set index_format="%4C %Z %{%b %d} %-15.15L %?M?(#%03M)&(%4l)? %?y?{%.20Y} ?%s"
 # I allways group reply
 bind index,pager r group-reply
 bind index,pager R reply
+
+# sync with <F5>
+bind index,pager <F5> sync-mailbox
 
 #sorting
 set sort = threads
@@ -53,7 +51,7 @@ unhdr_order *
 hdr_order From: Subject: Date: To: Message-ID: CC: Date: Organization: X-Mailer: User-Agent:
 
 source ~/.mutt/config/muttrc_colors
-source ~/.mutt/config/muttrc_lists
+#source ~/.mutt/config/muttrc_lists
 
 auto_view text/html
 
