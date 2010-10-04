@@ -1,0 +1,18 @@
+# IMAP settings
+set imap_user = "vpetkov"
+set imap_pass = "RedInj"
+set folder = "imaps://vpetkov@172.20.0.1:993/"
+
+#Mailbox settings
+set spoolfile = "+INBOX"
+set postponed = "+Drafts"
+set record = "+INBOX"
+
+#SMTP settings
+set smtp_url = "smtp://172.20.0.1:25/"
+set smtp_pass = "RedInj"
+
+# Personal settings
+set from = "vpetkov@mm-sol.com"
+set realname = "Vesselin Petkov"
+my_hdr Organization: Company, City, Country
