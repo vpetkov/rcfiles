@@ -1,0 +1,59 @@
+source ~/.mutt/config/muttrc_personal
+# editor settings
+# my signature is 3 lines. jump just before it when composing mail
+set editor = 'vim + -c "set textwidth=72" -c "set wrap" -c "set nocp" -c "\$-3"'
+
+# caching
+set header_cache = ~/.mutt/cache/headers
+set message_cachedir = ~/.mutt/cache/bodies
+set certificate_file = ~/.mutt/certificates
+
+#aliases
+set alias_file = ~/.mutt/aliases
+set sort_alias = alias
+set reverse_alias = yes
+source $alias_file
+
+#Goobook address book
+#source ~/.mutt/config/muttrc_goobook
+
+# Folder navigation bindings
+bind editor <space> noop
+
+#source ~/.mutt/config/muttrc_bindings_gmail
+source ~/.mutt/config/muttrc_bindings_generic
+
+set index_format="%4C %Z %{%b %d} %-15.15L %?M?(#%03M)&(%4l)? %?y?{%.20Y} ?%s"
+
+# I allways group reply
+bind index,pager r group-reply
+bind index,pager R reply
+
+#sorting
+set sort = threads
+set sort_aux = last-date-received
+
+# number of messages to display when pager is visible
+set pager_index_lines = 10
+
+set postpone = ask-no                     # Ask about postponing.
+set include                               # Include the message in replies.
+set attribution = "On %{%a, %e %B %Y at %R }, %n wrote :\n"   # Format of replies
+set edit_headers                          # I want to edit the message headers.
+set copy                                  # Keep copies of outgoing mail...
+set fcc_clear                             # Keep fcc's clear of signatues and encryption.
+set tilde                                 # Fill out messages with '~'.
+set noconfirmappend                       # Just append, don't hassle me.
+set pager_stop                            # Don't skip msgs on next page.
+set fast_reply                            # do not ask about To: and Subject when replying
+unset mark_old                            # do not mark messages as old
+
+# headers
+unhdr_order *
+hdr_order From: Subject: Date: To: Message-ID: CC: Date: Organization: X-Mailer: User-Agent:
+
+source ~/.mutt/config/muttrc_colors
+source ~/.mutt/config/muttrc_lists
+
+auto_view text/html
+
