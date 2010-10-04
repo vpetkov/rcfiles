@@ -1,6 +1,6 @@
 source ~/.mutt/config/muttrc_personal
 # editor settings
-set editor = 'vim + -c "set textwidth=72" -c "set wrap" -c "set nocp" -c "setlocal spell! spelllang=en_us,bg"'
+set editor = 'vim + -c "set textwidth=72" -c "set wrap" -c "set nocp" -c "setlocal spell! spelllang=en_us,bg" -c "nnoremap <F2> :wq<CR>"'
 
 # caching
 set header_cache = ~/.mutt/cache/headers
@@ -25,20 +25,17 @@ bind index,pager r group-reply
 bind index,pager R reply
 
 # sync with <F5>
-bind index,pager <F5> sync-mailbox
-#imap-fetch-mail
+macro index,pager <F5> "<imap-fetch-mail><sync-mailbox>"
 
-#use j/k for scrolling in pager
-bind pager j next-line
+#use arrows for scrolling in pager
 bind pager <Down> next-line
-bind pager k previous-line
 bind pager <Up> previous-line
 
-#send message with Enter
-bind compose <Enter> send-message
+#use enter to exit from pager
+macro pager <Enter> <exit>
 
 #sorting
-set sort = threads
+set sort = date
 set sort_aux = last-date-received
 
 # number of messages to display when pager is visible
@@ -56,12 +53,16 @@ set pager_stop                            # Don't skip msgs on next page.
 set fast_reply                            # do not ask about To: and Subject when replying
 unset mark_old                            # do not mark messages as old
 
-# headers
-unhdr_order *
-hdr_order From: Subject: Date: To: CC: Organization:
-
 source ~/.mutt/config/muttrc_colors
 source ~/.mutt/config/muttrc_lists
 
 auto_view text/html
 
+#send message with Enter
+macro compose <F2> <send-message>
+
+# headers
+ignore *
+unignore From: To: CC: Subject: Date:
+unhdr_order *
+hdr_order From: To: Date: CC: Subject:

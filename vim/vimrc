@@ -47,6 +47,12 @@ autocmd FileType python set expandtab
 " Save all buffers
 map <F2> :wa<CR>
 
+" I hate hitting q: or :я instead of :q
+nnoremap q: :q
+nnoremap :я :q
+nnoremap :я! :q!
+nnoremap :вя :wq
+
 " Toggle the task list
 map <F3> :TaskList<CR>
 
@@ -81,12 +87,6 @@ endif
 
 "set hlsearch
 "nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
-
-" Arg! Hate hitting q: or :я instead of :q
-nnoremap q: :q<esc>
-nnoremap :я :q
-nnoremap :я! :q!
-nnoremap :вя :wq
 
 " <C-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
