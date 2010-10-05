@@ -64,8 +64,9 @@ macro compose <F2> <send-message>
 #use enter to exit from pager
 bind pager <Enter> exit
 
-#use o to open message like gmail
-macro index o <select-entry>
+#use o to open/close message like
+bind index o display-message
+bind pager o exit
 
 # headers
 ignore *

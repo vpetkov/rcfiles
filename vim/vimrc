@@ -47,15 +47,6 @@ autocmd FileType python set expandtab
 " Save all buffers
 map <F2> :wa<CR>
 
-" Exit all buffers with q
-map q :qa<CR>
-
-" I hate hitting q: or :я instead of :q
-nnoremap q: :q
-nnoremap :я :q
-nnoremap :я! :q!
-nnoremap :вя :wq
-
 " Toggle the task list
 map <F3> :TaskList<CR>
 
@@ -65,12 +56,6 @@ set wildignore=*.o,*.obj,*.bak,*.exe,*.pyc,*.swp
 " tab navigation (next tab) with alt left / alt right
 nnoremap  <a-right>  gt
 nnoremap  <a-left>   gT
-
-" Ctrl + Arrows - Move around quickly
-nnoremap  <c-up>     {
-nnoremap  <c-down>   }
-nnoremap  <c-right>  El
-nnoremap  <c-down>   Bh
 
 " Shift + Arrows - Visually Select text
 nnoremap  <s-up>     Vk
