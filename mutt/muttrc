@@ -31,9 +31,6 @@ macro index,pager <F5> "<imap-fetch-mail><sync-mailbox>"
 bind pager <Down> next-line
 bind pager <Up> previous-line
 
-#use enter to exit from pager
-macro pager <Enter> <exit>
-
 #sorting
 set sort = date
 set sort_aux = last-date-received
@@ -58,8 +55,14 @@ source ~/.mutt/config/muttrc_lists
 
 auto_view text/html
 
-#send message with Enter
+#send message with <F2>
 macro compose <F2> <send-message>
+
+#use enter to exit from pager
+bind pager <Enter> exit
+
+#use o to open message like gmail
+macro index o <select-entry>
 
 # headers
 ignore *

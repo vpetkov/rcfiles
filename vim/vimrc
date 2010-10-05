@@ -47,6 +47,9 @@ autocmd FileType python set expandtab
 " Save all buffers
 map <F2> :wa<CR>
 
+" Exit all buffers with q
+map q :qa<CR>
+
 " I hate hitting q: or :я instead of :q
 nnoremap q: :q
 nnoremap :я :q
