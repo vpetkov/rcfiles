@@ -32,8 +32,8 @@ bind pager <Down> next-line
 bind pager <Up> previous-line
 
 #sorting
-set sort = date
-set sort_aux = last-date-received
+set sort = threads
+set sort_aux = reverse-date-received
 
 # number of messages to display when pager is visible
 set pager_index_lines = 10
@@ -49,6 +49,9 @@ set noconfirmappend                       # Just append, don't hassle me.
 set pager_stop                            # Don't skip msgs on next page.
 set fast_reply                            # do not ask about To: and Subject when replying
 unset mark_old                            # do not mark messages as old
+
+# don't ask for purge
+set delete = yes
 
 source ~/.mutt/config/muttrc_colors
 source ~/.mutt/config/muttrc_lists
