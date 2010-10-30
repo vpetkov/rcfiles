@@ -63,18 +63,9 @@ nnoremap  <s-down>   Vj
 nnoremap  <s-right>  vl
 nnoremap  <s-left>   vh
 
-if &diff
-" easily handle diffing 
-   vnoremap < :diffget<CR>
-   vnoremap > :diffput<CR>
-else
 " visual shifting (builtin-repeat)
-   vnoremap < <gv                       
-   vnoremap > >gv 
-endif
-
-"set hlsearch
-"nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+vnoremap < <gv                       
+vnoremap > >gv 
 
 " <C-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
