@@ -1,0 +1,18 @@
+
+# some more ls aliases
+alias ll='ls -lhGF'
+alias la='ls -lhGFA'
+alias l='ls -1F'
+
+# open buffers
+alias vim='vim -O'
+
+# proxy alias
+alias proxy='. ~/.export_http_proxy'
+alias noproxy='unset all_proxy ftp_proxy http_proxy https_proxy && echo "unset proxy                  [OK]"'
+
+PS1="\n\u:\w/\n→ "
+function title {
+    echo -en "\033]2;$@\007"
+}
+
