@@ -1,18 +1,19 @@
-
 # some more ls aliases
 alias ll='ls -lhGF'
 alias la='ls -lhGFA'
 alias l='ls -1F'
 
-# open buffers
-alias vim='vim -O'
+# open gvim buffers
+alias vim='gvim -O $@ &> /dev/null'
 
 # proxy alias
 alias proxy='. ~/.export_http_proxy'
 alias noproxy='. ~/.unset_http_proxy'
 
-PS1="\n\u:\w/\n→ "
+# update bord's clock
+alias update_clock_on_bord='DATE=$(date +"%F %T"); echo date \"$DATE\" | ssh root@192.168.2.15'
+
+PS1="\n\u:\w"'$(type __git_ps1 &>/dev/null && __git_ps1 "::%s")'"\n→ "
 function title {
     echo -en "\033]2;$@\007"
 }
-
