@@ -3,17 +3,29 @@ alias ll='ls -lhGF'
 alias la='ls -lhGFA'
 alias l='ls -1F'
 
-# open gvim buffers
-alias vim='gvim -O $@ &> /dev/null'
+# open vertical vim bufers
+alias vim='vim -O'
 
 # proxy alias
 alias proxy='. ~/.export_http_proxy'
 alias noproxy='. ~/.unset_http_proxy'
 
-# update bord's clock
+# update board's clock
 alias update_clock_on_bord='DATE=$(date +"%F %T"); echo date \"$DATE\" | ssh root@192.168.2.15'
 
+# Cool prompt
 PS1="\n\u:\w"'$(type __git_ps1 &>/dev/null && __git_ps1 "::%s")'"\n→ "
+
+# Set title easily
 function title {
     echo -en "\033]2;$@\007"
 }
+
+# TERM with color
+export TERM=xterm-256color
+
+# rhythmbox
+alias music="rhythmbox-client --play-pause"
+alias song="rhythmbox-client --print-playing"
+alias previous="rhythmbox-client --previous"
+alias next="rhythmbox-client --next"
