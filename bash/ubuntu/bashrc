@@ -26,6 +26,6 @@ export TERM=xterm-256color
 
 # rhythmbox
 alias music="rhythmbox-client --play-pause"
-alias song="rhythmbox-client --print-playing"
+alias song="rhythmbox-client --print-playing-format \"%tt by %ta from %at (%te/%td)\""
 alias previous="rhythmbox-client --previous"
 alias next="rhythmbox-client --next"
