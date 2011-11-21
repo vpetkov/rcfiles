@@ -11,7 +11,7 @@ alias proxy='. ~/.export_http_proxy'
 alias noproxy='. ~/.unset_http_proxy'
 
 # update board's clock
-alias update_clock_on_bord='DATE=$(date +"%F %T"); echo date \"$DATE\" | ssh root@192.168.2.15'
+alias update_marmaduke_time='ssh root@marmaduke "date -s \"$(date -u)\""'
 
 # Cool prompt
 PS1="\n\u:\w"'$(type __git_ps1 &>/dev/null && __git_ps1 "::%s")'"\n→ "
