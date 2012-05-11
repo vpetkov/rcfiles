@@ -50,6 +50,7 @@ alias repo-sync='time until repo sync; do echo "FAILED: trying again"; done'
 #git
 alias g="git"
 alias gg="git status"
-alias gl='git log --oneline --decorate -12'
-alias glg='git log --oneline --decorate --graph'
+alias glg='git lg'
+alias gla='git la'
+alias gl='git ls'
 
