@@ -1,0 +1,45 @@
+#=====================#
+#        IMAP         #
+#=====================#
+#
+## IMAP settings
+#set imap_user = "NAME"
+#set imap_pass = "PASS"
+#set folder = "imaps://NAME@HOST:PORT/"
+#
+##Mailbox settings
+#set spoolfile = "+INBOX"
+#set postponed = "+Drafts"
+#set record = "+Sent"
+#
+##SMTP settings
+#set smtp_pass = "PASS"
+#set smtp_url = "smtps://NAME@HOST:PORT/"
+#
+## Personal settings
+#set from = "NAME@HOST"
+#set realname = "FULL NAME"
+
+#=====================#
+#    Google Apps      #
+#=====================#
+
+#Mailbox settings
+set imap_user = "NAME@DOMAIN"
+set imap_pass = "PASS"
+set folder = "imaps://imap.gmail.com:993"
+
+set spoolfile = "+INBOX"
+set postponed="+[Gmail]/Drafts"
+
+#SMTP settings
+set smtp_url = "smtp://NAME@DOMAIN@smtp.gmail.com:587/"
+set smtp_pass = "PASS"
+
+# Personal settings
+set from = "NAME@DOMAIN"
+set realname = "FULL NAME"
+
+#set header_cache=~/.mutt/cache/headers
+#set message_cachedir=~/.mutt/cache/bodies
+#set certificate_file=~/.mutt/certificates

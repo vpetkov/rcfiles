@@ -1,0 +1,52 @@
+# editor settings
+set editor = 'vim + -c "set textwidth=72" -c "set wrap" -c "set nocp" -c "setlocal spell! spelllang=en_us,bg" -c "nnoremap <F2> :wq<CR>"'
+
+# caching
+set header_cache = ~/.mutt/cache/headers
+set message_cachedir = ~/.mutt/cache/bodies
+set certificate_file = ~/.mutt/certificates
+
+#aliases
+set alias_file = ~/.mutt/aliases
+set sort_alias = alias
+set reverse_alias = yes
+source $alias_file
+
+set index_format="%4C %Z %{%b %d} %-15.15n %?M? (%4l)? %?y?{%.20Y} ?%s"
+set status_format="%f (%u/%m) %> %P"
+
+#sorting
+set sort = threads
+set sort_aux = reverse-date-received
+
+# number of messages to display when pager is visible
+set pager_index_lines = 10
+
+set postpone = ask-no                     # Ask about postponing.
+set include                               # Include the message in replies.
+set attribution = "On %{%a, %e %B %Y at %R }, %n wrote:"   # Format of replies
+set edit_headers                          # I want to edit the message headers.
+set copy                                  # Keep copies of outgoing mail...
+set fcc_clear                             # Keep fcc's clear of signatues and encryption.
+set tilde                                 # Fill out messages with '~'.
+set noconfirmappend                       # Just append, don't hassle me.
+set pager_stop                            # Don't skip msgs on next page.
+set fast_reply                            # do not ask about To: and Subject when replying
+unset mark_old                            # do not mark messages as old
+
+# don't ask for purge
+set delete = yes
+
+#source ~/.mutt/config/muttrc_colors
+source ~/.mutt/config/muttrc_zenburn
+
+auto_view text/html
+
+# headers
+ignore *
+unignore From: To: CC: Subject: Date:
+unhdr_order *
+hdr_order From: To: Date: CC: Subject:
+
+source ~/.mutt/config/muttrc_bindings_generic
+source ~/.mutt/config/muttrc_bindings_navigation

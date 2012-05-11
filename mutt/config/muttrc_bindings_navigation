@@ -1,0 +1,21 @@
+macro browser h "<change-dir>..\n"
+bind browser l select-entry
+bind browser o select-entry
+
+macro index	h "<change-folder>?"
+bind index l display-message
+bind index o display-message
+
+bind pager <Enter> exit
+bind pager h exit
+bind pager o exit
+bind pager l view-attachments
+bind pager H display-toggle-weed
+bind pager <Down> next-line
+bind pager <Up> previous-line
+
+bind attach h exit
+bind attach l view-attach
+bind attach o view-attach
+
+bind editor <space> noop
