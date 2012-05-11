@@ -1,5 +1,6 @@
 #!/bin/bash
 alias realias="source ~/.bash/aliases"
+alias aliases="vi ~/.bash/aliases && realias"
 
 # some more ls aliases
 alias ll='ls -lhGF'
