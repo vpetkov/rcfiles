@@ -1,6 +1,6 @@
 #!/bin/bash
-alias realias="source ~/.bash/aliases"
-alias aliases="vi ~/.bash/aliases && realias"
+alias realias="source ~/.bash/aliases.bash"
+alias aliases="vi ~/.bash/aliases.bash && realias"
 
 # some more ls aliases
 alias ll='ls -lhGF'
@@ -49,6 +49,7 @@ alias repo-sync='time until repo sync; do echo "FAILED: trying again"; done'
 
 #git
 alias g="git"
+alias gu="git update"
 alias gg="git status"
 alias glg='git lg'
 alias gla='git la'
