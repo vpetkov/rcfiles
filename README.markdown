@@ -7,7 +7,7 @@ echo "source ~/.vim/vimrc.vim" > ~/.vimrc`
 `cat gitconfig > ~/.gitconfig`  
 **bash**  
 `cp -rf bash ~/.bash
-cat bash_profile >> ~/.bash_profile`
+cat bash_profile >> ~/.bash_profile`  
 **mutt**  
 `cp -rf mutt ~/.mutt  
-cat muttrc > ~/.muttrc
+cat muttrc > ~/.muttrc`
