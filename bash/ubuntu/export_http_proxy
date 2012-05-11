@@ -1,2 +1,0 @@
-export http_proxy="http://vpetkov:PASS@172.20.0.1:8080"
-export https_proxy=$http_proxy
