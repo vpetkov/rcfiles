@@ -21,7 +21,7 @@ alias previous='rhythmbox-client --previous'
 alias next='rhythmbox-client --next'
 
 # python
-alias py='python -ic \"import readline, rlcompleter; readline.parse_and_bind("tab: complete"); del readline, rlcompleter\"'
+alias py='ipython'
 
 # picocom
 alias pcom='picocom -b 115200 -l'
