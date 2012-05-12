@@ -2,10 +2,10 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-"set t_Co=256
-colorscheme zenburn
-
 call pathogen#infect()
+
+set t_Co=256
+colorscheme zenburn
 
 source ~/.vim/bulgarian.vim
 source ~/.vim/mac.vim
