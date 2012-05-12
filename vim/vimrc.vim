@@ -1,9 +1,14 @@
+" Use Vim settings, rather then Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+
 "set t_Co=256
 colorscheme zenburn
+
 call pathogen#infect()
 
 source ~/.vim/bulgarian.vim
-"source ~/.vim/mac.vim
+source ~/.vim/mac.vim
 
 " No Help, please
 nmap <F1> <Esc>
@@ -64,18 +69,12 @@ inoremap <s-tab> <c-n>
 "map <Down> :echo "no!"<cr>
 "map <Home> :echo "no!"<cr>
 "map <End> :echo "no!"<cr>
-" Use Vim settings, rather then Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
 
 set nobackup
 set nowritebackup
 set wildmenu                     " : menu has tab completion, etc
 
 set hidden                       " allow unsaved background buffers and remember marks/undo for them
-
-" 256 colors
-"set t_Co=256
 
 " Searching and Patterns
 set ignorecase                   " search is case insensitive
