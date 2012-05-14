@@ -5,6 +5,7 @@ set nocompatible
 call pathogen#infect()
 
 set t_Co=256
+let g:zenburn_terminal_Background=1
 colorscheme zenburn
 
 source ~/.vim/bulgarian.vim
