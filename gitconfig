@@ -1,6 +1,6 @@
 [user]
   name = Vesselin Petkov
-  email = vpetkov@mm-sol.com
+  email = mail@vpetkov.com
 
 [github]
   user = vpetkov
@@ -19,7 +19,9 @@
   gitproxy = ~/bin/gitproxy
 
 [pager]
-	log = off
+  log = off
+  show = off
+  diff = off
 
 [branch]
   autosetuprebase = always
@@ -45,10 +47,10 @@
   remote = green
 
 [color "diff"]
-  meta = yellow bold
-  frag = magenta bold
-  old = red bold
-  new = green bold
+  meta = yellow
+  frag = yellow
+  old = red
+  new = cyan
   whitespace = red reverse
 
 [color "status"]
