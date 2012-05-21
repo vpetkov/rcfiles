@@ -1,0 +1,6 @@
+[submodule "vim/bundle/zenburn"]
+	path = vim/bundle/zenburn
+	url = git@github.com:vpetkov/Zenburn.git
+[submodule "vim/bundle/taglist"]
+	path = vim/bundle/taglist
+	url = https://github.com/thisivan/vim-taglist.git
