@@ -1,3 +1,5 @@
+source ~/.mutt/config/muttrc_personal
+
 # editor settings
 set editor = 'vim + -c "set textwidth=72" -c "set wrap" -c "set nocp" -c "setlocal spell! spelllang=en_us,bg" -c "nnoremap <F2> :wq<CR>"'
 
