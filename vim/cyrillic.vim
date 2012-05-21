@@ -1,5 +1,16 @@
 " български буквички
+
+map гх gh
+map гй gj
+map гк gk
+map гл gl
+
 map зг zg
+map зо zo
+map зЦ zC
+map зР zR
+map зМ zM
+
 map ч `
 map я q
 map в w
@@ -32,7 +43,6 @@ map б b
 map н n
 map м m
 
-
 map Ч ~
 map Я Q
 map В W
@@ -64,4 +74,3 @@ map Ж V
 map Б B
 map Н N
 map М M
-
