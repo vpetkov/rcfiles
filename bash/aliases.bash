@@ -46,5 +46,10 @@ then
     # show/hide Desktop icons
     alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
     alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
+elif [[ "$OSTYPE" =~ ^linux ]]
+then
+    alias pbcopy='xsel --clipboard --input'
+    alias pbpaste='xsel --clipboard --output'
 fi
 
