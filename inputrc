@@ -1,11 +1,5 @@
-# Readline config from Mathias Bynens
-# github.com/mathiasbynens/dotfiles
-
 # Don’t prompt unless there are over 500 possible completions
 set completion-query-items 500
-
-# List all matches in case multiple possible completions are possible
-set show-all-if-ambiguous on
 
 # Immediately add a trailing slash when autocompleting symlinks to directories
 set mark-symlinked-directories on
@@ -26,9 +20,6 @@ set completion-query-items 200
 
 # Show extra file information when completing, like `ls -F` does
 set visible-stats on
-
-# Make Tab autocomplete regardless of filename case
-#set completion-ignore-case on
 
 # Be more intelligent when autocompleting by also looking at the text after
 # the cursor. For example, when the current line is "cd ~/src/mozil", and
