@@ -35,7 +35,7 @@ map <F12> :!clear; cat %<CR>
 noremap j gj
 noremap k gk
 
-" exit insert mode with jk or йк
+" escape insert mode with jk or йк
 imap jk <ESC>
 imap йк <ESC>
 
