@@ -2,6 +2,11 @@
 alias realias='source ~/.bash/aliases.bash'
 alias aliases='vi ~/.bash/aliases.bash && realias'
 
+# enable grep colors
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
 # some more ls aliases
 alias ls='ls -GF'
 alias ll='ls -lh'
@@ -38,6 +43,15 @@ alias gla='git la'
 alias gl='git ls'
 alias gd='git df'
 
+# mutt
+alias mail='mutt'
+
+# dir size
+alias dirsize='du -c -h'
+
+# used disk space
+alias used='df -h | grep /$ | cut -c 41-43'
+
 if [[ "$OSTYPE" =~ ^darwin ]]
 then
     # get OS X software updates
@@ -54,3 +68,6 @@ then
     alias pbpaste='xsel --clipboard --output'
 fi
 
+alias w='w | grep -v " \-bash$\| w$"'
+
+alias ctags='ctags -R --c-kinds=+px --extra=+q --exclude=.git --exclude=log .'
