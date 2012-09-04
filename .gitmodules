@@ -7,3 +7,6 @@
 [submodule "vim/bundle/solarized"]
 	path = vim/bundle/solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "awesome/themes/awesome-solarized"]
+	path = awesome/themes/awesome-solarized
+	url = git@github.com:vpetkov/awesome-solarized.git
