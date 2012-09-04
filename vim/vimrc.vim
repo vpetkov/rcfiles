@@ -2,8 +2,8 @@ set nocompatible
 syntax enable
 call pathogen#infect()
 
-source ~/.vim/zenburn.vim
-"source ~/.vim/solarized.vim
+"source ~/.vim/zenburn.vim
+source ~/.vim/solarized.vim
 source ~/.vim/settings.vim
 source ~/.vim/keybindings.vim
 "source ~/.vim/mac.vim
