@@ -10,8 +10,8 @@
   update = add --update
   lg = log --graph --oneline --decorate
   la = log --graph --oneline --decorate --all
-  ls = log --oneline --decorate  -12
-  meld = !~/bin/git-meld.pl
+  ls = log --oneline --decorate  -24
+  df = diff --no-prefix
 
 [core]
   editor = vim

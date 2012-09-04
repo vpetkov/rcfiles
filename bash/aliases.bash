@@ -36,6 +36,7 @@ alias gg='git status'
 alias glg='git lg'
 alias gla='git la'
 alias gl='git ls'
+alias gd='git df'
 
 if [[ "$OSTYPE" =~ ^darwin ]]
 then
