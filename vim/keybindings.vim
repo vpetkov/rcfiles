@@ -35,6 +35,10 @@ map <F12> :!clear; cat %<CR>
 noremap j gj
 noremap k gk
 
+" exit insert mode with jk or йк
+imap jk <ESC>
+imap йк <ESC>
+
 " Multipurpose tab key
 " If at start of line indent. Else, do completion.
 function! InsertTabWrapper()
