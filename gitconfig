@@ -12,11 +12,11 @@
   la = log --graph --oneline --decorate --all
   ls = log --oneline --decorate  -24
   df = diff --no-prefix
+  sho = show --no-prefix
 
 [core]
   editor = vim
   whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-  gitproxy = ~/bin/gitproxy
 
 [pager]
   log = off

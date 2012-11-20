@@ -8,7 +8,7 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # some more ls aliases
-alias ls='ls -GF'
+alias ls='ls -GF --color=auto'
 alias ll='ls -lh'
 alias la='ll -A'
 alias ld='ll | grep "^d"'
@@ -19,7 +19,7 @@ alias vi='vim'
 alias vim='vim -O'
 
 # python
-alias py='ipython'
+alias py='python -ic "import readline, rlcompleter; readline.parse_and_bind(\"tab: complete\"); del readline, rlcompleter"'
 
 # picocom
 alias pcom='picocom -b 115200 -l'
