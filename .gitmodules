@@ -7,3 +7,6 @@
 [submodule "vim"]
 	path = vim
 	url = https://github.com/vpetkov/vimrc.git
+[submodule "bash"]
+	path = bash
+	url = https://github.com/vpetkov/bashrc.git
