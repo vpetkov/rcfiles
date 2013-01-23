@@ -1,11 +1,14 @@
 [user]
   name = Vesselin Petkov
-  email = mail@vpetkov.com
+  email = vpetkov@me.com
 
 [github]
   user = vpetkov
 
 [alias]
+  co = checkout
+  cb = checkout -b
+  st = stash
   files = show --name-only --oneline
   update = add --update
   lg = log --graph --oneline --decorate
