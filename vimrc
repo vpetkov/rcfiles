@@ -135,3 +135,6 @@ else
 
 endif " has("autocmd")
 
+"Enable loading of filetype plugins
+filetype plugin indent on
+
