@@ -11,7 +11,6 @@ set ignorecase                   " Search is case insensitive
 set smartcase                    " Search case sensitive if caps on
 set incsearch                    " Show best match so far
 
-set backspace=2                  " Backspace over anything! (Super backspace!)
 set showmatch                    " Briefly jump to the previous matching bracket
 set matchtime=2                  " For .2 seconds
 set formatoptions-=tc            " I can format for myself, thank you very much
@@ -30,13 +29,15 @@ set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 set showcmd                      " Display incomplete commands
-set history=50                   " Keep 50 lines of command line history
+set history=10000                " Keep 50 lines of command line history
 
 set wildmenu                     " Make tab completion for files/buffers act like bash
 set wildignore=*.o,*.obj,*.bak,*.exe,*.pyc,*.swp
 set wildmode=longest,list
 set completeopt=longest,menu
 set complete=.,t
+
+set autoread
 
 set ruler                        " Line numbers and column the cursor is on
 set laststatus=2                 " Always display the status line
