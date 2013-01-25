@@ -36,12 +36,9 @@ alias repo-sync='time until repo sync; do echo "FAILED: trying again"; done'
 
 # git
 alias g='git'
-alias gu='git update'
-alias gg='git status'
-alias gd='git df'
-alias gl='git ls'
-alias glg='git lg'
-alias gla='git la'
+alias gg='git s'
+alias gd='git d'
+alias gl='git l'
 
 # rails
 alias be='bundle exec'

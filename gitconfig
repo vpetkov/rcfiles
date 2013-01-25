@@ -8,14 +8,14 @@
 [alias]
   co = checkout
   cb = checkout -b
-  st = stash
   files = show --name-only --oneline
   update = add --update
-  lg = log --graph --oneline --decorate
-  la = log --graph --oneline --decorate --all
-  ls = log --oneline --decorate  -24
-  df = diff --no-prefix
   sho = show --no-prefix
+  lol = log --oneline --graph --decorate
+  l = log --oneline --graph --decorate  -24
+  s = status --short
+  d = diff --no-prefix
+  ci = commit -v
 
 [core]
   editor = vim
