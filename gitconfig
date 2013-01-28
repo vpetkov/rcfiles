@@ -12,6 +12,7 @@
   update = add --update
   sho = show --no-prefix
   lol = log --oneline --graph --decorate
+  a = add
   l = log --oneline --graph --decorate  -24
   s = status --short
   d = diff --no-prefix

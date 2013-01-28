@@ -51,6 +51,9 @@ set laststatus=2                 " Always display the status line
 "Statusline - filename hour:minutes:seconds Day Date Month Year ==== line,row, percent
 set statusline=%F%m%r%h%w\ \%{strftime(\"\%H\:\%M\:\%S\ \%a\ \%d\ \%b\ \%Y\",getftime(expand(\"\%\%\")))}\ %=%=%l,%c\ (%p%%)
 
+" remap q
+noremap q <ESC>
+
 " spellcheck
 :map <F5> :setlocal spell! spelllang=en_us,bg<CR>
 :imap <F5> <esc>:setlocal spell! spelllang=en_us,bg<CR>

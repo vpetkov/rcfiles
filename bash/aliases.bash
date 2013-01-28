@@ -2,15 +2,10 @@
 alias realias='source ~/.bash/aliases.bash'
 alias aliases='vi ~/.bash/aliases.bash && realias'
 
-# enable grep colors
-alias grep='grep --color=auto'
-alias rgrep='grep -rn'
-
 # some more ls aliases
 alias ls='ls -GF'
 alias ll='ls -lh'
 alias la='ll -A'
-alias ld='ll | grep "^d"'
 alias l='ls -1'
 
 # open vertical vim bufers
