@@ -16,7 +16,7 @@
   l = log --oneline --graph --decorate  -24
   s = status --short
   d = diff --no-prefix
-  ci = commit -v
+  ci = commit --signoff --verbose
 
 [core]
   editor = vim
@@ -34,10 +34,11 @@
   default = tracking
 
 [diff]
-  tool = meld
+  tool = vimdiff
 
 [merge]
-  tool = meld
+  tool = vimdiff
+  ff = false
 
 [help]
   autocorrect = 1
