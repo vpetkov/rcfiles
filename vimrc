@@ -2,7 +2,18 @@ set nocompatible
 syntax enable
 call pathogen#infect()
 
-set background=light
+set background=dark
+" Use Solarized Dark for console vim
+" And Solarized Light for MacVim
+if has("gui_running")
+  set background=light
+  set guioptions=egmrt
+  set guioptions-=T        " No Toolbar in GVim
+  set guioptions-=r        " No Right-hand scroll
+  set guioptions-=l        " No Left-hand scroll
+  set noerrorbells
+  set visualbell
+endif
 colorscheme solarized
 
 set clipboard=unnamed            " Access x clipboard
