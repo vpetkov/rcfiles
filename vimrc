@@ -77,6 +77,10 @@ vnoremap > >gv
 noremap j gj
 noremap k gk
 
+" Ctrl-J/K is PgDn/Up
+map <C-K> <C-U>
+map <C-J> <C-D>
+
 " escape insert mode with jk
 imap jk <ESC>
 
