@@ -23,11 +23,14 @@ set scrolloff=2                  " Keep 3 lines below and above the cursor
 set number                       " Show line numbering
 set numberwidth=1                " Use 1 col + 1 space for numbers
 
+set splitright                   " Open vertical splits on the right side
+
 set mouse=n                      " Mouse only in normal mode.
 
 set ignorecase                   " Search is case insensitive
 set smartcase                    " Search case sensitive if caps on
 set incsearch                    " Show best match so far
+set hlsearch                     " Highlight search results
 
 set showmatch                    " Briefly jump to the previous matching bracket
 set matchtime=2                  " For .2 seconds
