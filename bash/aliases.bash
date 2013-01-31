@@ -15,15 +15,8 @@ alias vim='vim -O'
 # python
 alias py='python -ic "import readline, rlcompleter; readline.parse_and_bind(\"tab: complete\"); del readline, rlcompleter"'
 
-# picocom
-alias pcom='picocom -b 115200 -l'
-
-# fastboot
-alias fastboot='sudo ~/code/android_tools/fastboot'
-alias usbboot='sudo ~/code/android_tools/usbboot ~/code/android_tools/bootloader.bin'
-
 # week number
-alias week='date +%W'
+alias week='date +%V'
 alias day='date +%a | tr \"[:upper:]\" \"[:lower:]\"'
 
 # repo sync re-try
@@ -38,6 +31,9 @@ alias gl='git l'
 # rails
 alias be='bundle exec'
 alias bi='bundle install'
+
+# ack
+alias a="ack -ia"
 
 # TextMate
 alias m='mate'
