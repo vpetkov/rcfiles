@@ -13,10 +13,10 @@
   sho = show --no-prefix
   lol = log --oneline --graph --decorate
   a = add
-  l = log --oneline --graph --decorate  -24
+  l = log --oneline --graph --decorate  -32
   s = status --short
   d = diff --no-prefix
-  ci = commit --signoff --verbose
+  ci = commit --verbose
 
 [core]
   editor = vim
