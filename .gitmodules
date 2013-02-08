@@ -16,3 +16,6 @@
 [submodule "vim/bundle/coffee"]
 	path = vim/bundle/coffee
 	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "vim/bundle/commentary"]
+	path = vim/bundle/commentary
+	url = https://github.com/tpope/vim-commentary.git
