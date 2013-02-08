@@ -25,12 +25,11 @@ set numberwidth=1                " Use 1 col + 1 space for numbers
 
 set splitright                   " Open vertical splits on the right side
 
-set mouse=n                      " Mouse only in normal mode.
+set mouse=a                      " Mouse only in normal mode.
 
 set ignorecase                   " Search is case insensitive
 set smartcase                    " Search case sensitive if caps on
 set incsearch                    " Show best match so far
-set hlsearch                     " Highlight search results
 
 set showmatch                    " Briefly jump to the previous matching bracket
 set matchtime=2                  " For .2 seconds
@@ -87,8 +86,15 @@ noremap k gk
 map <C-K> <C-U>
 map <C-J> <C-D>
 
+" Ctrl-H/L switch b/w vertical splits
+map <C-H> <C-W>h
+map <C-L> <C-W>l
+
 " escape insert mode with jk
 imap jk <ESC>
+
+" toggle hlsearch on/off
+map H :set hlsearch!<CR>
 
 " Multipurpose tab key
 " If at start of line indent. Else, do completion.
