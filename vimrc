@@ -53,10 +53,13 @@ set showcmd                      " Display incomplete commands
 set history=10000                " Keep 50 lines of command line history
 
 set wildmenu                     " Make tab completion for files/buffers act like bash
-set wildignore=*.o,*.obj,*.bak,*.exe,*.pyc,*.swp
-set wildmode=longest,list
+set wildmode=list:longest        " Complete only until point of ambiguity.
 set completeopt=longest,menu
 set complete=.,t
+
+set wildignore=*.o,*.obj,*.bak,*.exe,*.pyc,*.swp
+set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js
+set wildignore+=*/smarty/*,*/vendor/*,*/node_modules/*,*/.git/*,*/.hg/*,*/.svn/*,*/.sass-cache/*,*/log/*,*/tmp/*,*/build/*,*/ckeditor/*
 
 set autoread
 
