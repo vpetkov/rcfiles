@@ -17,6 +17,7 @@
   s = status --short
   d = diff --no-prefix
   ci = commit --verbose
+  br = branch
 
 [core]
   editor = vim
