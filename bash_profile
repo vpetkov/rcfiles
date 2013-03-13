@@ -8,6 +8,9 @@ source /usr/local/etc/bash_completion
 # use 256 color terminal
 TERM=xterm-256color
 
+# enable grep colors
+export GREP_OPTIONS="--color=auto"
+
 # bigger history
 HISTSIZE=10000
 HISTFILESIZE=$HISTSIZE
@@ -41,8 +44,13 @@ fi
 # You could just use `-g` instead, but I like being explicit
 complete -W "NSGlobalDomain" defaults
 
+# Add completion for `g` alias for `git`
+# This is taken from git-completion with some modification
+complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null \
+  || complete -o default -o nospace -F _git g
+
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Finder Dock Mail Safari iTunes iCal Address\ Book SystemUIServer" killall
 
 # rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+eval "$(rbenv init -)"

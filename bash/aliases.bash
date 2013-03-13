@@ -9,8 +9,7 @@ alias la='ll -A'
 alias l='ls -1'
 
 # open vertical vim bufers
-alias vi='vim'
-alias vim='vim -O'
+# alias vim='vim -O'
 
 # python
 alias py='python -ic "import readline, rlcompleter; readline.parse_and_bind(\"tab: complete\"); del readline, rlcompleter"'
@@ -31,9 +30,10 @@ alias gl='git l'
 # rails
 alias be='bundle exec'
 alias bi='bundle install'
+alias sp='spec'
 
 # ack
-alias a="ack -ia"
+alias a='ack'
 
 # TextMate
 alias m='mate'
