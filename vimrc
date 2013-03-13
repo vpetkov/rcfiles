@@ -2,6 +2,7 @@ set nocompatible
 syntax enable
 call pathogen#infect()
 
+colorscheme solarized
 set background=dark
 " Use Solarized Dark for console vim
 " And Solarized Light for MacVim
@@ -14,11 +15,10 @@ if has("gui_running")
   set noerrorbells
   set visualbell
 endif
-colorscheme solarized
 
 set clipboard=unnamed            " Access x clipboard
 
-set lazyredraw                   " Don't repaint when scripts are running
+" set lazyredraw                   " Don't repaint when scripts are running
 set scrolloff=2                  " Keep 3 lines below and above the cursor
 set number                       " Show line numbering
 set numberwidth=1                " Use 1 col + 1 space for numbers
@@ -30,6 +30,8 @@ set mouse=a                      " Mouse only in normal mode.
 set ignorecase                   " Search is case insensitive
 set smartcase                    " Search case sensitive if caps on
 set incsearch                    " Show best match so far
+
+set hlsearch                     " Enable highlighting search results
 
 set showmatch                    " Briefly jump to the previous matching bracket
 set matchtime=2                  " For .2 seconds
@@ -51,16 +53,18 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set showcmd                      " Display incomplete commands
 set history=10000                " Keep 50 lines of command line history
 
-set wildmenu                     " Make tab completion for files/buffers act like bash
+set cursorline                   " Highlight current line
+
+" set wildmenu                   " Make tab completion for files/buffers act like bash
 set wildmode=list:longest        " Complete only until point of ambiguity.
-set completeopt=longest,menu
-set complete=.,t
+" set completeopt=longest,menu
+" set complete=.,t
 
 set wildignore=*.o,*.obj,*.bak,*.exe,*.pyc,*.swp
 set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js
 set wildignore+=*/smarty/*,*/vendor/*,*/node_modules/*,*/.git/*,*/.hg/*,*/.svn/*,*/.sass-cache/*,*/log/*,*/tmp/*,*/build/*,*/ckeditor/*
 
-set autoread
+set autoread                     " Auto read file if it's changed outside of vim
 
 set ruler                        " Line numbers and column the cursor is on
 set laststatus=2                 " Always display the status line
@@ -86,9 +90,20 @@ noremap k gk
 map <C-K> <C-U>
 map <C-J> <C-D>
 
+" Shift-J/K skips 10 lines
+nmap J 10j
+nmap K 10k
+
+" Ctrl-[/] switch b/w tabs
+" map <mapleader>[ gT
+" map <mapleader>] gt
+
 " Ctrl-H/L switch b/w vertical splits
 map <C-H> <C-W>h
 map <C-L> <C-W>l
+
+" I always press these by mistake
+nmap L l
 
 " escape insert mode with jk
 imap jk <ESC>
