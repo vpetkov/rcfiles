@@ -1,6 +1,6 @@
 [user]
   name = Vesselin Petkov
-  email = vpetkov@me.com
+  email = mail@vpetkov.com
 
 [github]
   user = vpetkov
@@ -12,12 +12,11 @@
   update = add --update
   sho = show --no-prefix
   lol = log --oneline --graph --decorate
-  a = add
   l = log --oneline --graph --decorate  -32
   s = status --short
   d = diff --no-prefix
+  a = add
   ci = commit --verbose
-  br = branch
 
 [core]
   editor = vim
