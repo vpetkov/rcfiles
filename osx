@@ -53,6 +53,10 @@ defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 # Enable highlight hover effect for the grid view of a stack (Dock)
 defaults write com.apple.dock mouse-over-hilte-stack -bool true
 
+# No Dock delay
+defaults write com.apple.Dock autohide-delay -float 0
+
 # Kill affected applications
 for app in Finder Dock SystemUIServer; do killall "$app" > /dev/null 2>&1; done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
+
