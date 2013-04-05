@@ -3,11 +3,11 @@ syntax enable
 call pathogen#infect()
 
 colorscheme solarized
-set background=dark
+set background=light
 " Use Solarized Dark for console vim
 " And Solarized Light for MacVim
 if has("gui_running")
-  set background=light
+  set background=dark
   set guioptions=egmrt
   set guioptions-=T        " No Toolbar in GVim
   set guioptions-=r        " No Right-hand scroll
@@ -86,13 +86,15 @@ vnoremap > >gv
 noremap j gj
 noremap k gk
 
+noremap gr gT
+
 " Ctrl-J/K is PgDn/Up
 map <C-K> <C-U>
 map <C-J> <C-D>
 
 " Shift-J/K skips 10 lines
-nmap J 10j
-nmap K 10k
+map J 10j
+map K 10k
 
 " Ctrl-[/] switch b/w tabs
 " map <mapleader>[ gT
