@@ -63,6 +63,3 @@
   changed = green
   untracked = cyan
 
-[color "diff"]
-  whitespace = red reverse
-
