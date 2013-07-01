@@ -3,11 +3,11 @@ syntax enable
 call pathogen#infect()
 
 colorscheme solarized
-set background=light
+set background=dark
 " Use Solarized Dark for console vim
 " And Solarized Light for MacVim
 if has("gui_running")
-  set background=dark
+  set background=light
   set guioptions=egmrt
   set guioptions-=T        " No Toolbar in GVim
   set guioptions-=r        " No Right-hand scroll
@@ -96,6 +96,9 @@ map <C-J> <C-D>
 map J 10j
 map K 10k
 
+" so leader-l joins lines
+map <Leader>jj :join<CR>
+
 " Ctrl-[/] switch b/w tabs
 " map <mapleader>[ gT
 " map <mapleader>] gt
@@ -103,9 +106,6 @@ map K 10k
 " Ctrl-H/L switch b/w vertical splits
 map <C-H> <C-W>h
 map <C-L> <C-W>l
-
-" I always press these by mistake
-nmap L l
 
 " escape insert mode with jk
 imap jk <ESC>
@@ -185,3 +185,4 @@ endif " has("autocmd")
 "Enable loading of filetype plugins
 filetype plugin indent on
 
+autocmd BufEnter *.html.erb set noexpandtab|set tabstop=4|set shiftwidth=4
