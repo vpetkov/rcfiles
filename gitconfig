@@ -1,6 +1,6 @@
 [user]
   name = Vesselin Petkov
-  email = mail@vpetkov.com
+  email = vpetkov@me.com
 
 [github]
   user = vpetkov
@@ -10,12 +10,8 @@
   cb = checkout -b
   files = show --name-only --oneline
   update = add --update
-  sho = show --no-prefix
   lol = log --oneline --graph --decorate
-  l = log --oneline --graph --decorate  -32
-  s = status --short
-  d = diff --no-prefix
-  a = add
+  st = status --short
   ci = commit --verbose
 
 [core]
@@ -35,6 +31,7 @@
 
 [diff]
   tool = vimdiff
+  noprefix = true
 
 [merge]
   tool = vimdiff

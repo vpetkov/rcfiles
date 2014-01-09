@@ -8,9 +8,6 @@ alias ll='ls -lh'
 alias la='ll -A'
 alias l='ls -1'
 
-# open vertical vim bufers
-# alias vim='vim -O'
-
 # python
 alias py='python -ic "import readline, rlcompleter; readline.parse_and_bind(\"tab: complete\"); del readline, rlcompleter"'
 
@@ -22,21 +19,17 @@ alias day='date +%a | tr \"[:upper:]\" \"[:lower:]\"'
 alias repo-sync='time until repo sync; do echo "FAILED: trying again"; done'
 
 # git
-alias g='git'
-alias gg='git s'
-alias gd='git d'
-alias gl='git l'
+alias gg='git st'
+alias gd='git diff'
+alias gl='git lol -32'
 
 # rails
 alias be='bundle exec'
 alias bi='bundle install'
-alias sp='spec'
+alias sp='bundle exec rspec'
 
 # ack
 alias a='ack'
-
-# TextMate
-alias m='mate'
 
 # dir size
 alias dirsize='du -c -h'
@@ -44,11 +37,6 @@ alias dirsize='du -c -h'
 # used disk space
 alias used='df -h | grep /$ | cut -c 41-43'
 
-# get OS X software updates
-# update Homebrew itself, and upgrade installed Homebrew packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade'
-
 # show/hide Desktop icons
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
-
