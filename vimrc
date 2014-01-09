@@ -2,18 +2,11 @@ set nocompatible
 syntax enable
 call pathogen#infect()
 
-colorscheme solarized
-set background=dark
-" Use Solarized Dark for console vim
-" And Solarized Light for MacVim
 if has("gui_running")
-  set background=light
-  set guioptions=egmrt
-  set guioptions-=T        " No Toolbar in GVim
-  set guioptions-=r        " No Right-hand scroll
-  set guioptions-=l        " No Left-hand scroll
-  set noerrorbells
-  set visualbell
+  colorscheme xcodelike
+  set guioptions-=r              " No Right-hand scroll
+  set guioptions-=L              " No Left-hand scroll
+  set guifont=DejaVu\ LGC\ Sans\ Mono:h12
 endif
 
 set clipboard=unnamed            " Access x clipboard
@@ -53,7 +46,7 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set showcmd                      " Display incomplete commands
 set history=10000                " Keep 50 lines of command line history
 
-set cursorline                   " Highlight current line
+" set cursorline                 " Highlight current line
 
 " set wildmenu                   " Make tab completion for files/buffers act like bash
 set wildmode=list:longest        " Complete only until point of ambiguity.
@@ -96,6 +89,10 @@ map <C-J> <C-D>
 map J 10j
 map K 10k
 
+" Shift-H/L jumps 10 columns
+map H 10h
+map L 10l
+
 " so leader-l joins lines
 map <Leader>jj :join<CR>
 
@@ -111,7 +108,7 @@ map <C-L> <C-W>l
 imap jk <ESC>
 
 " toggle hlsearch on/off
-map H :set hlsearch!<CR>
+map ? :set hlsearch!<CR>
 
 " Multipurpose tab key
 " If at start of line indent. Else, do completion.
@@ -181,6 +178,20 @@ else
   set autoindent                " always set autoindenting on
 
 endif " has("autocmd")
+
+" Create parent dirs on save
+function s:MkNonExDir(file, buf)
+    if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
+        let dir=fnamemodify(a:file, ':h')
+        if !isdirectory(dir)
+            call mkdir(dir, 'p')
+        endif
+    endif
+endfunction
+augroup BWCCreateDir
+    autocmd!
+    autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
+augroup END
 
 "Enable loading of filetype plugins
 filetype plugin indent on
