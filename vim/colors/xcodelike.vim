@@ -44,7 +44,7 @@ hi StatusLine   guifg=#eeeeee guibg=#444444 gui=italic
 hi StatusLineNC guifg=#666666 guibg=#eeeeee gui=none
 hi VertSplit    guifg=#eeeeee guibg=#444444 gui=none   "Vertical Split Line
 hi Folded       guibg=#384048 guifg=#a0a8b0 gui=none
-hi Title        guifg=#f6f3e8 guibg=NONE    gui=bold
+hi Title        guifg=#000000 guibg=NONE    gui=bold
 hi Visual       guifg=#000000 guibg=#B2D5FF gui=none   "Selection
 hi SpecialKey   guifg=#3875d7 guibg=#B2D5FF gui=none
 
