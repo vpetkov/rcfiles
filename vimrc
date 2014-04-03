@@ -198,5 +198,3 @@ augroup END
 
 "Enable loading of filetype plugins
 filetype plugin indent on
-
-autocmd BufEnter *.html.erb set noexpandtab|set tabstop=4|set shiftwidth=4
