@@ -21,11 +21,10 @@ alias repo-sync='time until repo sync; do echo "FAILED: trying again"; done'
 # git
 alias gg='git st'
 alias gd='git diff'
-alias gl='git lol -32'
+alias gl='git oneline'
 
 # rails
-alias be='bundle exec'
-alias bi='bundle install'
+alias b='bundle exec'
 alias sp='bundle exec rspec'
 
 # ack
