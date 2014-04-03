@@ -9,7 +9,9 @@
   co = checkout
   cb = checkout -b
   files = show --name-only --oneline
-  update = add --update
+  update = commit --all --verbose
+  oneline = log --oneline --decorate -32
+  patch = add --patch
   lol = log --oneline --graph --decorate
   st = status --short
   ci = commit --verbose
