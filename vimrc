@@ -75,6 +75,9 @@ noremap q <ESC>
 vnoremap < <gv
 vnoremap > >gv
 
+" switch
+nnoremap - :Switch<cr>
+
 " move in wrapped lines
 noremap j gj
 noremap k gk
