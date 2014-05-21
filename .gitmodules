@@ -25,3 +25,6 @@
 [submodule "vim/bundle/switch"]
 	path = vim/bundle/switch
 	url = https://github.com/AndrewRadev/switch.vim.git
+[submodule "vim/bundle/surround"]
+	path = vim/bundle/surround
+	url = https://github.com/tpope/vim-surround.git
