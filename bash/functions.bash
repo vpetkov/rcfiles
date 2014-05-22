@@ -2,7 +2,7 @@ function title {
     echo -en "\033]0;$@\007"
 }
 
-function fa {
+function f {
     ack -g $@ | ack $1
 }
 
