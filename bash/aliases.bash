@@ -23,6 +23,9 @@ alias gg='git st'
 alias gd='git diff'
 alias gl='git oneline'
 
+# vim-git
+alias vg='vi -p `git status --porcelain | grep " M " | cut -d" " -f3`'
+
 # rails
 alias b='bundle exec'
 alias sp='bundle exec rspec'
