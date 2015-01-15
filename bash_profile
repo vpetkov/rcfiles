@@ -12,7 +12,7 @@ TERM=xterm-256color
 export GREP_OPTIONS="--color=auto"
 
 # bigger history
-HISTSIZE=10000
+HISTSIZE=200000
 HISTFILESIZE=$HISTSIZE
 
 # don't put duplicate lines in the history. See bash(1) for more options
