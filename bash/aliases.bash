@@ -1,6 +1,7 @@
 #!/bin/bash
 alias realias='source ~/.bash/aliases.bash'
 alias aliases='vi ~/.bash/aliases.bash && realias'
+alias vimrc='vi ~/.vimrc'
 
 # some more ls aliases
 alias ls='ls -GF'
@@ -24,7 +25,7 @@ alias gd='git diff'
 alias gl='git oneline'
 
 # vim-git
-alias vg='vi -p `git status --porcelain | grep " M " | cut -d" " -f3`'
+alias vg='vi -p `git status --porcelain | grep " M\|A " | cut -d" " -f3`'
 
 # rails
 alias b='bundle exec'
