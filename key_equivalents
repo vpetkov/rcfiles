@@ -7,3 +7,35 @@ defaults write com.skype.skype NSUserKeyEquivalents '{ "Next Conversation" = "@]
 defaults write com.apple.mail NSUserKeyEquivalents '{ "Get All New Mail" = "@r"; Send = "@\\U21a9"; }'
 
 defaults write com.apple.safari NSUserKeyEquivalents '{ "Disable JavaScript" = "@j"; }'
+
+→ defaults read com.apple.mail NSUserKeyEquivalents
+{
+    "Email This Page" = "@$i";
+    "Next Message in this Conversation" = "@[";
+    "Previous Message in this Conversation" = "@]";
+    Send = "@\\U21a9";
+    "Send Again" = "@$\\U21a9";
+}
+
+→ defaults read com.apple.safari NSUserKeyEquivalents
+{
+    "Disable JavaScript" = "@j";
+    "Show Next Tab" = "@]";
+    "Show Previous Tab" = "@[";
+}
+
+→ defaults read com.apple.terminal NSUserKeyEquivalents
+{
+    "Print..." = "@~p";
+    "Select Next Tab" = "@]";
+    "Select Previous Tab" = "@[";
+}
+
+→ defaults read com.apple.finder NSUserKeyEquivalents
+{
+    Back = "@\\U2190";
+    Forward = "@\\U2192";
+    "Show Next Tab" = "@]";
+    "Show Previous Tab" = "@[";
+}
+
