@@ -9,10 +9,12 @@
   co = checkout
   cb = checkout -b
   files = show --name-only --oneline
-  update = commit --all --verbose
-  oneline = log --oneline --decorate -32
+  update = add -u
+  oneline = log --oneline --decorate -24
   patch = add --patch
+  ammend = commit --ammend
   lol = log --oneline --graph --decorate
+  last = log -1 --format=oneline --decorate
   st = status --short
   ci = commit --verbose
 
@@ -48,17 +50,23 @@
 [color "branch"]
   current = yellow reverse
   local = yellow
-  remote = green
+	remote = black
 
 [color "diff"]
   meta = yellow
   frag = yellow
   old = red
-  new = cyan
+  new = blue
   whitespace = red reverse
 
 [color "status"]
   added = yellow
-  changed = green
-  untracked = cyan
+  changed = yellow
+  untracked = red
 
+[color "decorate"]
+	branch = yellow
+	remoteBranch = yellow
+	HEAD = yellow
+[difftool]
+	prompt = false
