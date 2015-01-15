@@ -3,7 +3,6 @@ syntax enable
 call pathogen#infect()
 
 if has("gui_running")
-  colorscheme xcodelike
   set guioptions-=r              " No Right-hand scroll
   set guioptions-=L              " No Left-hand scroll
   set guifont=DejaVu\ LGC\ Sans\ Mono:h12
@@ -17,8 +16,6 @@ set number                       " Show line numbering
 set numberwidth=1                " Use 1 col + 1 space for numbers
 
 set splitright                   " Open vertical splits on the right side
-
-set mouse=a                      " Mouse only in normal mode.
 
 set ignorecase                   " Search is case insensitive
 set smartcase                    " Search case sensitive if caps on
@@ -34,6 +31,8 @@ set tabstop=2                    " Tab stop of 4
 set shiftwidth=2                 " Sw 4 spaces (used on auto indent)
 set softtabstop=2                " 4 spaces as a tab for bs/del
 set expandtab                    " Make tab in spaces
+
+set noro                         " Unset the read-only flag
 
 set wrap linebreak               " Wrap whole words
 set backspace=indent,eol,start   " Allow backspacing over everything in insert mode
@@ -64,6 +63,9 @@ set laststatus=2                 " Always display the status line
 "Statusline - filename hour:minutes:seconds Day Date Month Year ==== line,row, percent
 set statusline=%F%m%r%h%w\ \%{strftime(\"\%H\:\%M\:\%S\ \%a\ \%d\ \%b\ \%Y\",getftime(expand(\"\%\%\")))}\ %=%=%l,%c\ (%p%%)
 
+" leader
+let mapleader = ","
+
 " remap q
 noremap q <ESC>
 
@@ -74,6 +76,10 @@ noremap q <ESC>
 " visual shifting (builtin-repeat)
 vnoremap < <gv
 vnoremap > >gv
+
+" unmap s and Q
+nnoremap s <Nop>
+nnoremap Q <Nop>
 
 " switch
 nnoremap - :Switch<cr>
@@ -106,12 +112,13 @@ map <Leader>jj :join<CR>
 " Ctrl-H/L switch b/w vertical splits
 map <C-H> <C-W>h
 map <C-L> <C-W>l
+map <C-@> <C-W>w
 
 " escape insert mode with jk
 imap jk <ESC>
 
 " toggle hlsearch on/off
-map ? :set hlsearch!<CR>
+map <Leader>hh :set hlsearch!<CR>
 
 " Multipurpose tab key
 " If at start of line indent. Else, do completion.
@@ -137,7 +144,6 @@ inoremap <s-tab> <c-n>
 hi Error ctermfg=210 ctermbg=239 gui=bold
 
 " highlight long lines
-let mapleader = ","
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 map <Leader>ll :2match OverLength /\%81v.\+/<cr>
 map <Leader>lo :2match<cr>
@@ -196,5 +202,19 @@ augroup BWCCreateDir
     autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
 augroup END
 
+" ControlP settings
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<c-t>'],
+    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+    \ }
+
 "Enable loading of filetype plugins
 filetype plugin indent on
+
+cabbrev a Ack
+
+
+highlight LineNr ctermfg=grey
+highlight NonText ctermfg=white
