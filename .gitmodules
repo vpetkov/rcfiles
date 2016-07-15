@@ -31,3 +31,6 @@
 [submodule "vim/bundle/ctrlp"]
 	path = vim/bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule "vim/bundle/file-line"]
+	path = vim/bundle/file-line
+	url = https://github.com/bogado/file-line.git
