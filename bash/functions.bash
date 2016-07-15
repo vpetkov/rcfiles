@@ -6,6 +6,20 @@ function f {
     ack -g $@ | ack $1
 }
 
+function a {
+  if [ -d "${!#}" ]; then
+    arg_length=$(($#-1))
+    query=${@:1:$arg_length}
+    eval "ack \"${query}\" ${!#}"
+  else
+    eval "ack \"${@}\" ."
+  fi
+}
+
+function def {
+  a def $@
+}
+
 function google {
     QUERY="$@"
     GOOGLE_URL="http://www.google.com/search?q="
