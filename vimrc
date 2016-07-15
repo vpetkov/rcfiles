@@ -89,6 +89,8 @@ noremap j gj
 noremap k gk
 
 noremap gr gT
+noremap <D-[> gT
+noremap <D-]> gt
 
 " Ctrl-J/K is PgDn/Up
 map <C-K> <C-U>
@@ -104,10 +106,6 @@ map L 10l
 
 " so leader-l joins lines
 map <Leader>jj :join<CR>
-
-" Ctrl-[/] switch b/w tabs
-" map <mapleader>[ gT
-" map <mapleader>] gt
 
 " Ctrl-H/L switch b/w vertical splits
 map <C-H> <C-W>h
