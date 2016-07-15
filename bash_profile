@@ -12,12 +12,17 @@ TERM=xterm-256color
 export GREP_OPTIONS="--color=auto"
 
 # bigger history
-HISTSIZE=200000
+# http://www.diegor.it/2015/07/13/on-el-capitan-bash-and-history/
+HISTSIZE=50000
 HISTFILESIZE=$HISTSIZE
+SHELL_SESSION_HISTORY=0
+
+# ignore stupid commands
+HISTIGNORE="ls*:ll:la:l:rm*:cd*:gd:gg:gl*:gf:vg"
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
-HISTCONTROL=ignoredups:ignorespace
+HISTCONTROL=ignoredups:ignorespace:erasedups
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -29,14 +34,6 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ] && ! shopt -oq posix
-then
-    source /etc/bash_completion
-fi
-
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
 
@@ -46,11 +43,16 @@ complete -W "NSGlobalDomain" defaults
 
 # Add completion for `g` alias for `git`
 # This is taken from git-completion with some modification
-complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null \
-  || complete -o default -o nospace -F _git g
+# complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null \
+#   || complete -o default -o nospace -F _git g
 
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Finder Dock Mail Safari iTunes iCal Address\ Book SystemUIServer" killall
+
+# bash_completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
 
 # rbenv
 eval "$(rbenv init -)"
