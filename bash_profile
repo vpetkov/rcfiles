@@ -18,7 +18,7 @@ HISTFILESIZE=$HISTSIZE
 SHELL_SESSION_HISTORY=0
 
 # ignore stupid commands
-HISTIGNORE="ls*:ll:la:l:rm*:cd*:gd:gg:gl*:gf:vg"
+HISTIGNORE="ls*:ll:la:l:cd:gd:gg:gl*:gf:vg"
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
