@@ -71,14 +71,12 @@ noremap q <ESC>
 
 " spellcheck
 :map s :setlocal spell! spelllang=en_us,bg<CR>
-" :imap s <esc>:setlocal spell! spelllang=en_us,bg<CR>
 
 " visual shifting (builtin-repeat)
 vnoremap < <gv
 vnoremap > >gv
 
-" unmap s and Q
-" nnoremap s <Nop>
+" unmap Q
 nnoremap Q <Nop>
 
 " switch
@@ -117,6 +115,9 @@ imap jk <ESC>
 
 " toggle hlsearch on/off
 map <Leader>hh :set hlsearch!<CR>
+
+" alias for Ack command
+cabbrev a Ack
 
 " Multipurpose tab key
 " If at start of line indent. Else, do completion.
@@ -210,9 +211,6 @@ let g:ctrlp_prompt_mappings = {
 
 "Enable loading of filetype plugins
 filetype plugin indent on
-
-cabbrev a Ack
-
 
 highlight LineNr ctermfg=grey
 highlight NonText ctermfg=white
