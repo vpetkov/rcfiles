@@ -10,14 +10,14 @@
   cb = checkout -b
   files = show --name-only --oneline
   remotes = remote -v
-  update = add -u
   oneline = log --oneline --decorate -24
   patch = add --patch
   ammend = commit --ammend
   lol = log --oneline --graph --decorate
   last = log -1 --format=oneline --decorate
   st = status --short
-  ci = commit --verbose
+  update = commit --all --verbose
+  commit = commit --verbose
 
 [core]
   editor = vim

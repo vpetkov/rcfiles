@@ -2,6 +2,7 @@
 alias realias='source ~/.bash/aliases.bash'
 alias aliases='vi ~/.bash/aliases.bash && realias'
 alias vimrc='vi ~/.vimrc'
+alias gitconfig='vi ~/.gitconfig'
 alias functions='vi ~/.bash/functions.bash && source ~/.bash/functions.bash'
 alias hosts='sudo vi /etc/hosts'
 
