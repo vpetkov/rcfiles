@@ -70,15 +70,15 @@ let mapleader = ","
 noremap q <ESC>
 
 " spellcheck
-:map <F5> :setlocal spell! spelllang=en_us,bg<CR>
-:imap <F5> <esc>:setlocal spell! spelllang=en_us,bg<CR>
+:map s :setlocal spell! spelllang=en_us,bg<CR>
+" :imap s <esc>:setlocal spell! spelllang=en_us,bg<CR>
 
 " visual shifting (builtin-repeat)
 vnoremap < <gv
 vnoremap > >gv
 
 " unmap s and Q
-nnoremap s <Nop>
+" nnoremap s <Nop>
 nnoremap Q <Nop>
 
 " switch
@@ -187,7 +187,7 @@ else
 endif " has("autocmd")
 
 " Create parent dirs on save
-function s:MkNonExDir(file, buf)
+function! s:MkNonExDir(file, buf)
     if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
         let dir=fnamemodify(a:file, ':h')
         if !isdirectory(dir)
