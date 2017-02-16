@@ -1,49 +1,94 @@
-# I allways group reply
+# In short:
+# s - sync
+# m - move
+# c - compose
+# h - up(out)
+# l - down(in)
+# j - next
+# k - previous
+# q - quit
+
+# Switch r/R because I allways group reply
 bind index,pager r group-reply
 bind index,pager R reply
 
-# sync with <F5>
-macro index,pager <F5> "<imap-fetch-mail><sync-mailbox>"
-bind browser <F5> check-new
+# Sync with 's'
+macro index,pager <Return> "<imap-fetch-mail><sync-mailbox>"
+macro index,pager s "<imap-fetch-mail><sync-mailbox>"
+bind browser s check-new
+bind browser <Return> check-new
 
-# mark as read
+# Mark as read/unread with control+j/k because I don't use it often but usualy while browsing when all macros are around j/k
 bind index \Ck read-subthread
+bind index \Cj toggle-new
 
-#use arrows for scrolling in pager
+# Next/Previous search result with n/p
+bind index,pager,browser n search-next
+bind index,pager,browser p search-opposite
 
-#navigation bindings
+# send message with <F2>
+bind compose <Return> send-message
+
+# Compose new message with 'c'
+bind index,pager c mail
+
+# Rebind save to m for move
+bind index,pager m save-message
+
+# Move to trash instead of delete
+macro index,pager d "m=Deleted Messages\n"
+#unset confirmappend
+
+# Use arrows for scrolling in pager
+bind pager <Down> next-line
+bind pager <Up> previous-line
+
+# Navigation bindings
+# hjkl will be left, down, up, right but depending on context left might mean up one dir, or out of current context (like back from pager to the index)
+# and right might mean enter, or go down one level e.g. into the message from the index
+# also once in the pager if the message has attachments going right into the message will open the list of attachments and from there you can go into the attachment file
+# it's pretty clever really and I proud myself with it ;-)
+
+macro browser h "<change-dir>..\n"
+bind browser l select-entry
+bind browser o select-entry
+
+macro index h "<change-folder>?"
+bind index l display-message
+bind index o display-message
+
+bind pager h exit
+bind pager o exit
+bind pager l view-attachments
+bind pager H display-toggle-weed
+
+bind attach h exit
+bind attach l view-attach
+bind attach o view-attach
+
+# not sure what I put this in here for
+bind editor <space> noop
+
+# some traditional gmail style options are also available
 macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
 macro index ga "<change-folder>=Archive<enter>" "Go to Archive"
-macro index gs "<change-folder>=Sent<enter>" "Go to Sent"
-macro index gd "<change-folder>=Drafts<enter>" "Go to Drafts"
-macro index gA "<change-folder>=Action<enter>" "Go to Drafts"
-macro index gr "<change-folder>=Respond<enter>" "Go to Drafts"
-macro index gw "<change-folder>=Waiting<enter>" "Go to Drafts"
+macro index gs "<change-folder>=Sent Messages<enter>" "Go to Sent"
+macro index gd "<change-folder>=Deleted Messages<enter>" "Go to Deleted"
+macro index gn "<change-folder>=Notes<enter>" "Go to Notes"
 
-#Archive messages
+# Archive messages
 # It's reverse to mutt's default behaviour for
 # single message and thread operations
 # since I use archive thread more often I bind it to 'e' instead of 'E'
-# I also use gmail's 'e' because 'a' conficts with address book
+# I used e because it's like that in gmail, but also 'a' because it makes more sense for me
 macro index E "s=Archive<enter>y" 'archive the current message'
 macro pager E "s=Archive<enter>y" 'archive the current message'
 macro index e "<tag-thread>;s=Archive<Enter>y" 'archive the current thread'
 macro pager e "<exit><tag-thread>;s=Archive<Enter>y<display-message>" 'archive the current thread'
+macro index A "s=Archive<enter>y" 'archive the current message'
+macro pager A "s=Archive<enter>y" 'archive the current message'
+macro index a "<tag-thread>;s=Archive<Enter>y" 'archive the current thread'
+macro pager a "<exit><tag-thread>;s=Archive<Enter>y<display-message>" 'archive the current thread'
 
-macro index \Ct  "<tag-thread><tag-prefix><mark-as-new><tag-prefix><save-message>=Action<enter>"  "Mark thread as Action"
-macro pager \Ct  "<exit><tag-entry><tag-prefix><mark-as-new><tag-prefix><save-message>=Action<enter>"  "Mark message as Action"
-
-macro index \Cr  "<tag-thread><tag-prefix><mark-as-new><tag-prefix><save-message>=Respond<enter>" "Mark thread as Respond"
-macro pager \Cr  "<exit><tag-entry><tag-prefix><mark-as-new><tag-prefix><save-message>=Respond<enter>" "Mark message as Respond"
-
-macro index \Cw  "<tag-thread><tag-prefix><mark-as-new><tag-prefix><save-message>=Waiting<enter>" "Mark thread as waitfor"
-macro pager \Cw  "<exit><tag-entry><tag-prefix><mark-as-new><tag-prefix><save-message>=Waiting<enter>" "Mark message as waitfor"
-
-#send message with <F2>
-macro compose <F2> <send-message>
-
-#move to trash instead of delete
-#unset confirmappend
-#macro index d " s=Trash\ni"
-#macro pager d " s=Trash\n"
-
+# So the new alias/adding to address book action is bound to control+a
+macro index \ca create-alias
