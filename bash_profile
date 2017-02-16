@@ -54,5 +54,8 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
 
+# pythonrc
+export PYTHONSTARTUP=~/.pythonrc
+
 # rbenv
 eval "$(rbenv init -)"

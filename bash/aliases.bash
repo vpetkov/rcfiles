@@ -13,7 +13,7 @@ alias la='ll -A'
 alias l='ls -1'
 
 # python
-alias py='python -ic "import readline, rlcompleter; readline.parse_and_bind(\"tab: complete\"); del readline, rlcompleter"'
+alias py='python'
 
 # week number
 alias week='date +%V'
