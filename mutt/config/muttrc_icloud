@@ -1,0 +1,22 @@
+# IMAP settings
+set imap_user = "vpetkov@me.com"
+set folder = "imaps://imap.mail.me.com/"
+set smtp_url = "smtp://vpetkov@me.com@smtp.mail.me.com:587/"
+
+# Mailbox settings
+set spoolfile = "imaps://imap.mail.me.com/INBOX"
+set postponed = "+Drafts"
+set record = "+Sent Messages"
+
+# Personal settings
+set from = "vpetkov@me.com"
+set realname = "Veselin Petkov"
+
+# iCloud settings
+set imap_pipeline_depth = 0
+set smtp_authenticators = 'gssapi:login'
+
+# iCloud password
+source ~/.mutt/config/.icloud_password
+# set imap_pass = ""
+# set smtp_pass = ""
