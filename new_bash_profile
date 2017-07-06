@@ -1,0 +1,65 @@
+# PATHS
+PATH="/usr/local/sbin:$PATH"
+PATH="$HOME/bin:$PATH"
+export PATH=$PATH
+
+# PROMPT
+source ~/.git-prompt.sh
+PS1='\n\d \t\n$PWD$(__git_ps1 " \033[0;33m%s\033[0m")\n '
+
+# ALIASES
+alias bash_profile='vi ~/.bash_profile && . ~/.bash_profile'
+alias vimrc='vi ~/.vimrc'
+alias gitconfig='vi ~/.gitconfig'
+alias hosts='sudo vi /etc/hosts'
+alias ls='ls -GF'
+alias ll='ls -lh'
+alias la='ll -A'
+alias l='ls -1'
+alias py='python'
+alias gg='git st'
+alias gd='git diff'
+alias gl='git oneline'
+alias vi='vim -p'
+alias b='bundle exec'
+
+# COMPLETION
+source ~/.git-completion.bash
+# Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
+[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
+
+# HISTORY
+HISTSIZE=50000
+HISTFILESIZE=$HISTSIZE
+SHELL_SESSION_HISTORY=0
+HISTIGNORE="ls*:ll:la:l:cd:gd:gg:gl*:gf:vg"
+HISTCONTROL=ignoredups:ignorespace:erasedups # do not duplicate lines
+shopt -s histappend # append the history file instead overwriting
+
+# RBENV
+if type rbenv > /dev/null; then
+  eval "$(rbenv init -)"
+fi
+
+# FUNCTIONS
+function title {
+    echo -en "\033]0;$@\007"
+}
+
+function f {
+    ack -g $@ | ack $1
+}
+
+function a {
+  if [ -d "${!#}" ]; then
+    arg_length=$(($#-1))
+    query=${@:1:$arg_length}
+    eval "ack \"${query}\" ${!#}"
+  else
+    eval "ack \"${@}\" ."
+  fi
+}
+
+function def {
+  a def $@
+}
