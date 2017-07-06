@@ -1,16 +1,11 @@
 set nocompatible
 syntax enable
-call pathogen#infect()
-
-if has("gui_running")
-  set guioptions-=r              " No Right-hand scroll
-  set guioptions-=L              " No Left-hand scroll
-  set guifont=DejaVu\ LGC\ Sans\ Mono:h12
-endif
 
 set clipboard=unnamed            " Access x clipboard
 
-" set lazyredraw                   " Don't repaint when scripts are running
+set mouse=a                      " Use mouse
+
+"set lazyredraw                  " Don't repaint when scripts are running
 set scrolloff=2                  " Keep 3 lines below and above the cursor
 set number                       " Show line numbering
 set numberwidth=1                " Use 1 col + 1 space for numbers
@@ -43,15 +38,9 @@ set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 set showcmd                      " Display incomplete commands
-set history=10000                " Keep 50 lines of command line history
-
-" set cursorline                 " Highlight current line
 
 " set wildmenu                   " Make tab completion for files/buffers act like bash
 set wildmode=list:longest        " Complete only until point of ambiguity.
-" set completeopt=longest,menu
-" set complete=.,t
-
 set wildignore=*.o,*.obj,*.bak,*.exe,*.pyc,*.swp
 set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js
 set wildignore+=*/smarty/*,*/vendor/*,*/node_modules/*,*/.git/*,*/.hg/*,*/.svn/*,*/.sass-cache/*,*/log/*,*/tmp/*,*/build/*,*/ckeditor/*
@@ -70,7 +59,7 @@ let mapleader = ","
 noremap q <ESC>
 
 " spellcheck
-:map s :setlocal spell! spelllang=en_us,bg<CR>
+:map S :setlocal spell! spelllang=en_us,bg<CR>
 
 " visual shifting (builtin-repeat)
 vnoremap < <gv
@@ -114,7 +103,7 @@ map <C-@> <C-W>w
 imap jk <ESC>
 
 " toggle hlsearch on/off
-map <Leader>hh :set hlsearch!<CR>
+map s :set hlsearch!<CR>
 
 " alias for Ack command
 cabbrev a Ack
